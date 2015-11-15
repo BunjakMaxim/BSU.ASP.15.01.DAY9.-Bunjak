@@ -120,9 +120,9 @@ namespace TreeTest
 
             Assert.AreEqual(s, "50040371000100005");
         }
-        /*
+        
         [Test]
-        public void TreePreorderBypassBook_Test()
+        public void TreeInorderBypassBook_Test()
         {
             string s = "";
             Tree<Book> tree = new Tree<Book>();
@@ -132,14 +132,14 @@ namespace TreeTest
             tree.AddNode(new Book() { Author = "Михаил Булгаков", Title = "Мастер и Маргарита", Genre = "Роман", Year = 1966 });
             tree.AddNode(new Book() { Author = "Федор Достоевский", Title = "Преступление и наказание", Genre = "Роман", Year = 1866 });
             
-            foreach (var a in tree.PreorderIterator())
+            foreach (var a in tree.InorderIterator())
                 s += a.Title;
 
-            Assert.AreEqual(s, "50040371000100005");
+            Assert.AreEqual(s, "Вини-ПухВойна и мирМастер и МаргаритаПреступление и наказаниеФранкенштейн");
         }
-
+        
         [Test]
-        public void TreePreorderBypassBook_NewComparer_Test()
+        public void TreeInorderBypassBook_NewComparer_Test()
         {
             string s = "";
             Tree<Book> tree = new Tree<Book>(new CompareBook());
@@ -150,47 +150,10 @@ namespace TreeTest
             tree.AddNode(new Book() { Author = "Михаил Булгаков", Title = "Мастер и Маргарита", Genre = "Роман", Year = 1966 });
             tree.AddNode(new Book() { Author = "Федор Достоевский", Title = "Преступление и наказание", Genre = "Роман", Year = 1866 });
 
-            foreach (var a in tree.PreorderIterator())
+            foreach (var a in tree.InorderIterator())
                 s += a.Title;
 
-            Assert.AreEqual(s, "Война и мирВини-ПухФранкенштейнМастер и Маргарита");
-        }*/
-    }
-
-
-    class CompareInt : IComparer<int>
-    {
-        public int Compare(int x, int y)
-        {
-            return CountSymbols(x) - CountSymbols(y);
-        }
-
-        private int CountSymbols(int x)
-        {
-            int count = 0;
-            int n = 10;
-
-            while(x/n >= 1)
-            {
-                n *= 10;
-                count ++;
-            }
-            return count;
+            Assert.AreEqual(s, "Вини-ПухВойна и мирФранкенштейнМастер и МаргаритаПреступление и наказание");
         }
     }
-    class CompareString : IComparer<string>
-    {
-        public int Compare(string x, string y)
-        {
-            return x.Length - y.Length;
-        }
-    }
-    class CompareBook : IComparer<Book>
-    {
-        public int Compare(Book x, Book y)
-        {
-            return x.Title.Length - y.Title.Length;
-        }
-    }
-
 }

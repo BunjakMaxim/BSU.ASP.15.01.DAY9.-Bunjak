@@ -37,6 +37,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
+    <Compile Include="CompareBook.cs" />
+    <Compile Include="CompareInt.cs" />
+    <Compile Include="CompareString.cs" />
     <Compile Include="NUnitTestTreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
