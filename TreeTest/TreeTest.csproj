@@ -41,6 +41,7 @@
     <Compile Include="CompareInt.cs" />
     <Compile Include="CompareString.cs" />
     <Compile Include="NUnitTestTreeNode.cs" />
+    <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

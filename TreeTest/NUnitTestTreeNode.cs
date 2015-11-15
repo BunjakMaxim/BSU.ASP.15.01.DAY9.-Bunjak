@@ -155,5 +155,11 @@ namespace TreeTest
 
             Assert.AreEqual(s, "Вини-ПухВойна и мирФранкенштейнМастер и МаргаритаПреступление и наказание");
         }
+
+        [Test]
+        public void TreePointTest()
+        {
+            Tree<Point> tree = new Tree<Point>();
+        }
     }
 }
